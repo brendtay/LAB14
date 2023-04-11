@@ -2,16 +2,15 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser")
 const Pool = require('pg').Pool
-require('dotenv').config()
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
+    host: 'localhost',
+    database: 'postgres',
+    user: 'postgres',
+    password: '2014',
     port: 5432,
 })
 
